@@ -22,13 +22,19 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
 }
+
 .section {
   display: none; /* hide all sections */
   padding: 60px 20px;
   min-height: 60vh;
+   opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .section.active {
-  display: block; /* show only active */
+  display: block;
+   opacity: 1;
+  transform: translateY(0); /* show only active */
 }
 .image {
   width: 170px;
@@ -36,11 +42,18 @@ body {
   object-fit: cover;
   border-radius: 50%;
   border: 3.5px solid rgb(97, 254, 254);
- box-shadow: 0 2px 8px rgb(243, 200, 135);
+  box-shadow: 0 2px 8px rgb(243, 200, 135);  
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
 
 }
+.image:hover {
+  transform: rotate3d(1, 1, 0, 6deg) scale(1.03);
+  box-shadow: 0 0 24px rgba(182, 210, 205, 0.4);
+}
+
 .text {
-  font-family: sans-serif;
+  font-family: Tahoma,Verdana, sans-serif;
   color: rgb(82, 244, 244);
 }
 .link {
@@ -48,11 +61,17 @@ body {
   height: 40px;
   border-radius: 50%;
   border: 2px solid rgb(72, 244, 244);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.link:hover{
+  transform: rotate3d(1, 1, 0, 6deg) scale(1.03);
+  box-shadow: 0 0 24px rgba(4, 230, 185, 0.4); 
 }
 .navbar .nav-link.active {
   color: #0d6efd !important;
   font-weight: bold;
 }
+
 
 /* About Section */
 .about-container {
@@ -88,6 +107,11 @@ body {
   min-width: 180px;
   font-weight: 500;
   width: fit-content;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+.me:hover{
+  transform: scale(1.03);
+  box-shadow: 0 0 5px blanchedalmond;
 }
 .me span {
   color: var(--sky-blue);
@@ -95,13 +119,19 @@ body {
 .hobies {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 24px;
   margin-top: 18px;
   margin-right: 10px;
   background-color: rgb(37, 91, 112);
   border-radius: var(--border-radius);
   padding: 18px 22px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+.hobies:hover{
+  transform: scale(1.03);
+  box-shadow: 0 0 5px blanchedalmond;
+}
+
 
 .hobies h2 {
   width: 100%;
@@ -148,6 +178,8 @@ body {
   box-shadow: var(--shadow);
   min-width: 220px;
   flex: 1;
+transition: transform 0.4s ease, box-shadow 0.4s ease;
+
 }
 
 .expertize h2,
@@ -172,11 +204,17 @@ body {
   padding: 18px 22px;
   box-shadow: var(--shadow);
   margin-top: 18px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .skills h2 {
   color: var(--accent);
   margin-bottom: 8px;
+}
+.expertize:hover,
+.education:hover,.skills:hover{
+  transform: scale(1.03);
+  box-shadow: 0 0 5px blanchedalmond;
 }
 
 /* Project Section */
@@ -204,7 +242,15 @@ body {
   padding: 8px;
   margin-bottom: 8px;
   margin-right: 10px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+
+.p1:hover {
+  transform: rotate3d(1, 1, 0, 6deg) scale(1.03);
+  box-shadow: 0 12px 24px rgba(217, 222, 221, 0.4);
+}
+
+
 .p1 img {
   width: 185px;
   height: 170px;
@@ -255,6 +301,11 @@ body {
   font-size: 1rem;
   box-shadow: 0 2px 8px #72f1d780;
   min-width: 120px;
+  transition:transform 0.6s ease ,box-shadow 0.6s ease;
+}
+.contact-detail:hover{
+  transform: scale(1.03);
+  box-shadow: 0 0 5px blanchedalmond;
 }
 
 .contact-detail span {
@@ -280,7 +331,9 @@ textarea {
   width: 50%;
   font-size: 1rem;
   box-shadow: 0 2px 8px #09efc180;
+   transition:transform 0.4s ease ,box-shadow 0.4s ease;
 }
+
 
 button[type="submit"] {
   border-style: none;
@@ -293,7 +346,19 @@ button[type="submit"] {
   font-size: 1.1rem;
   cursor: pointer;
   box-shadow: 0 2px 8px #04e6b980;
+  transition:transform 0.4s ease ,box-shadow 0.4s ease;
 }
+input:active,
+textarea:active{
+ transform: scale(1.02);
+ box-shadow: 0 0 15px var(--accent), 0 0 15px var(--sky-blue);
+}
+button[type="submit"]:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px var(--accent), 0 0 30px var(--sky-blue);
+}
+
+/* Responsive */
 @media (max-width: 700px) {
   .abouts {
     width: fit-content;
