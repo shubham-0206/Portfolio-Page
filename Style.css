@@ -43,7 +43,7 @@ body {
   border-radius: 50%;
   border: 3.5px solid rgb(97, 254, 254);
   box-shadow: 0 2px 8px rgb(243, 200, 135);  
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 1s ease , box-shadow 0.4s ease;
 
 
 }
